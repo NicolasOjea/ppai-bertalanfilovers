@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Gestor
 {
-    internal class GestorImportarActualizacion
+    public class GestorImportarActualizacion
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.ENTIDAD
 {
-    internal class Maridaje
+    public class Maridaje
     {
     }
 }

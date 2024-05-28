@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.ENTIDAD
 {
-    internal class Enófilo
+    public class Enófilo
     {
+        //////////// ATRIBUTOS ////////////
     }
 }
