@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.ENTIDAD
             coordenadasUbicacion = new List<float>();
             descripcion = string.Empty;
             historia = string.Empty;
-            nombre = string.Empty;
+            this.nombre = nombre;
             periodoActualizacion = 2;
 
             bodegas.Add(this);
@@ -64,20 +64,18 @@ namespace WindowsFormsApp1.ENTIDAD
         //////////// TERMINAN SETS Y GETS ////////////
 
         //////////// MÉTODOS ////////////
+ 
 
-        public List<string> ObtenerNombresBodegas()
+ 
+        public string estaParaActualizar()
         {
-            List<string> nombres = new List<string>();
-            foreach (Bodega bodega in bodegas)
-            {
-                nombres.Add(bodega.getNombre());
-            }
-            return nombres;
+            return getNombre();
         }
 
         public string getNombre()
         {
-            return this.nombre;
+            return nombre;
         }
+        
     }
 }

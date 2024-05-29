@@ -10,11 +10,11 @@ namespace WindowsFormsApp1.Gestor
     public class GestorImportarActualizacion
     {
         //////////// ATRIBUTOS ////////////
-        private Bodega bodega;
-        
-        public GestorImportarActualizacion()
+        private List<Bodega> bodegaList = new List<Bodega>();
+        public GestorImportarActualizacion(List<Bodega> bodegas)
         {
             //////////// CONSTRUCTOR ////////////
+            this.bodegaList = bodegas;
         }
 
         public void opcionImportarActualizacion()
@@ -22,9 +22,15 @@ namespace WindowsFormsApp1.Gestor
             this.buscarBodegasParaActualizar();
         }
 
-        public void buscarBodegasParaActualizar()
+        public List<string> buscarBodegasParaActualizar()
         {
-            bodega.estaParaActualizar();
+            List<string> bodegasEncontradas = new List<string>();
+
+            foreach (Bodega bodega in bodegaList)
+            {
+                bodegasEncontradas.Add(bodega.estaParaActualizar());
+            }
+            return bodegasEncontradas;
         }
         //////////// MÉTODOS ////////////
     }

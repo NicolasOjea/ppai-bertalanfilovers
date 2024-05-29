@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ENTIDAD\Bodega.cs" />
     <Compile Include="ENTIDAD\Enofilo.cs" />
+    <Compile Include="ENTIDAD\init.cs" />
     <Compile Include="ENTIDAD\Maridaje.cs" />
     <Compile Include="ENTIDAD\Siguiendo.cs" />
     <Compile Include="ENTIDAD\TipoUva.cs" />

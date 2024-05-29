@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.lstBodegas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // lstBodegas
             // 
-            this.button1.Location = new System.Drawing.Point(185, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lstBodegas.FormattingEnabled = true;
+            this.lstBodegas.Location = new System.Drawing.Point(84, 76);
+            this.lstBodegas.Name = "lstBodegas";
+            this.lstBodegas.Size = new System.Drawing.Size(216, 238);
+            this.lstBodegas.TabIndex = 0;
+            this.lstBodegas.SelectedIndexChanged += new System.EventHandler(this.lstBodegas_SelectedIndexChanged);
             // 
-            // Form2
+            // PantallaImportarActualizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Name = "Form2";
+            this.Controls.Add(this.lstBodegas);
+            this.Name = "PantallaImportarActualizacion";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lstBodegas;
     }
 }
