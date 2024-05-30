@@ -47,7 +47,33 @@ namespace WindowsFormsApp1.Gestor
 
         public void obtenerActualizacionDeVinosBodegas()
         {
+            obtenerActualizacionDeVinosBodegas();
 
         }
-}
+
+        public void actualizarDatosDeVinoBodega()
+        {
+
+        }
+
+        public void actualizarFechaActualizacion()
+        {
+        }
+
+        public void buscarMaridaje()
+        {
+        }
+
+        public void buscarTipoUva()
+        {
+        }
+
+        public void crearVinos()
+        {
+        }
+
+        public void enviarNotificaciones()
+        {
+        }
+    }
 }
