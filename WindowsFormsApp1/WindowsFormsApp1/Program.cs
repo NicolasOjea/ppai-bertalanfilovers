@@ -25,13 +25,22 @@ namespace WindowsFormsApp1
 
         public static GestorImportarActualizacion setGestor()
         {
-            GestorImportarActualizacion gestor = new GestorImportarActualizacion(crearListabodegas());
+            GestorImportarActualizacion gestor = new GestorImportarActualizacion(crearListabodegas(), crearListaVinos());
             return gestor;
         }
         public static List<Bodega> crearListabodegas()
         {
             List<Bodega> bodegas = init.crearListabodegas();
             return bodegas;
+        }
+        public static List<Vino> crearListaVinos()
+        {
+            List<Vino> vinos = init.crearListaVinos();
+            foreach(var bodega in vinos)
+            {
+                Console.WriteLine(bodega.getNombre(),bodega);
+            }
+            return vinos;
         }
         // Crear 5 bodegas con datos de ejemplo
 

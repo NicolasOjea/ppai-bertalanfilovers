@@ -15,17 +15,18 @@ namespace WindowsFormsApp1.ENTIDAD
         private string historia;
         private string nombre;
         private int periodoActualizacion;
+        private DateTime fechaDeActualizacion;
 
 
 
-        public Bodega(string nombre, string historia, string descripcion, int periodoActualizacion, List<float> coordenadasUbicacion)
+        public Bodega(string nombre, string historia, string descripcion, int periodoActualizacion, List<float> coordenadasUbicacion, DateTime fechaDeActualizacion)
         {
             coordenadasUbicacion = new List<float>();
-            descripcion = string.Empty;
-            historia = string.Empty;
+            this.descripcion = nombre;
+            this.historia = historia;
             this.nombre = nombre;
-            periodoActualizacion = 2;
-
+            this.periodoActualizacion = periodoActualizacion;
+            this.fechaDeActualizacion = fechaDeActualizacion;
             bodegas.Add(this);
         }
 
@@ -69,7 +70,15 @@ namespace WindowsFormsApp1.ENTIDAD
  
         public string estaParaActualizar()
         {
-            return getNombre();
+            int dias = (DateTime.Now - this.fechaDeActualizacion).Days;
+            if (dias >= (this.periodoActualizacion*30))
+            {
+                return getNombre();
+            }
+            else
+            {
+                return "";
+            }
         }
 
         public string getNombre()

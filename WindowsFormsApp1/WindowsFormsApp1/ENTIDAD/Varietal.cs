@@ -16,8 +16,8 @@ namespace WindowsFormsApp1.ENTIDAD
         //////////// CONSTRUCTOR ////////////
         public Varietal(string descripcion, float porcentajeComposicion, TipoUva tipoUva)
         {
-            descripcion = string.Empty;
-            porcentajeComposicion = 0.0f;
+            this.descripcion = descripcion;
+            this.porcentajeComposicion = porcentajeComposicion;
             this.tipoUva = tipoUva;
         }
 
@@ -40,6 +40,19 @@ namespace WindowsFormsApp1.ENTIDAD
             set { tipoUva = value; }
         }
 
+        public string getDescripcion()
+        {
+            return this.descripcion;
+        }
+        public float getPorcentajeComposicion()
+        {
+            return this.porcentajeComposicion;
+        }
+
+        public string getTipoUva()
+        {
+            return tipoUva.getNombre();
+        }
         //////////// TERMINAN SETS Y GETS ////////////
 
         //////////// MÉTODOS ////////////

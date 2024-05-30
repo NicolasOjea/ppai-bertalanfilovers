@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.ENTIDAD;
+using WindowsFormsApp1.Pantalla;
 
 namespace WindowsFormsApp1.Gestor
 {
@@ -11,27 +12,42 @@ namespace WindowsFormsApp1.Gestor
     {
         //////////// ATRIBUTOS ////////////
         private List<Bodega> bodegaList = new List<Bodega>();
-        public GestorImportarActualizacion(List<Bodega> bodegas)
+        private PantallaImportarActualizacion pantalla = null;
+        public GestorImportarActualizacion(List<Bodega> bodegas, List<Vino> vinos)
         {
             //////////// CONSTRUCTOR ////////////
             this.bodegaList = bodegas;
         }
 
-        public void opcionImportarActualizacion()
+        //////////// MÉTODOS ////////////
+        public void setPantalla(PantallaImportarActualizacion pantalla)  // Relaciona al gestor con la pantalla
         {
-            this.buscarBodegasParaActualizar();
+            this.pantalla = pantalla;
+        }
+        public void opcionImportarActualizacion(PantallaImportarActualizacion pantalla)
+        {
+            setPantalla(pantalla);
+            buscarBodegasParaActualizar();
         }
 
-        public List<string> buscarBodegasParaActualizar()
+        public void buscarBodegasParaActualizar()
         {
             List<string> bodegasEncontradas = new List<string>();
-
             foreach (Bodega bodega in bodegaList)
             {
                 bodegasEncontradas.Add(bodega.estaParaActualizar());
             }
-            return bodegasEncontradas;
+            pantalla.mostrarBodegasParaActualizar(bodegasEncontradas);
         }
-        //////////// MÉTODOS ////////////
-    }
+
+        public void tomarSeleccionBodega(string seleccionBodega)
+        {
+            obtenerActualizacionDeVinosBodegas();
+        }
+
+        public void obtenerActualizacionDeVinosBodegas()
+        {
+
+        }
+}
 }

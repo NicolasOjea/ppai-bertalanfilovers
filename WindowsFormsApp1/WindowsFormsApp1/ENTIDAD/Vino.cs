@@ -21,13 +21,13 @@ namespace WindowsFormsApp1.ENTIDAD
         //////////// CONSTRUCTOR ////////////
         public Vino(string nombre, string notaDeCataBodega, int añada, int imagenEtiqueta, float precioARS, List<Maridaje> maridaje, List<Varietal> varietal)
         {
-            añada = 0;
-            imagenEtiqueta = 0;
-            nombre = string.Empty;
-            notaDeCataBodega = string.Empty;
-            precioARS = 0.0f;
-            maridaje = new List<Maridaje>();
-            varietal = new List<Varietal>();
+            this.añada = añada;
+            this.imagenEtiqueta = 0;
+            this.nombre = nombre;
+            this.notaDeCataBodega = notaDeCataBodega;
+            this.precioARS = precioARS;
+            this.maridaje = new List<Maridaje>();
+            this.varietal = new List<Varietal>();
         }
 
         //////////// SETS Y GETS ////////////
@@ -72,7 +72,10 @@ namespace WindowsFormsApp1.ENTIDAD
             get { return varietal; }
             set { varietal = value; }
         }
-
+        public string getNombre()
+        {
+            return this.nombre;
+        }
 
         //////////// TERMINAN SETS Y GETS ////////////
 

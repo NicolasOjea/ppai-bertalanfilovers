@@ -14,8 +14,8 @@ namespace WindowsFormsApp1.ENTIDAD
         //////////// CONSTRUCTOR ////////////
         public TipoUva(string nombre, string descripcion)
         {
-            descripcion = string.Empty;
-            nombre = string.Empty;
+            this.descripcion = descripcion;
+            this.nombre = nombre;
         }
 
         //////////// SETS Y GETS ////////////
@@ -31,6 +31,10 @@ namespace WindowsFormsApp1.ENTIDAD
             set { nombre = value; }
         }
 
+        public string getNombre()
+        {
+            return this.nombre;
+        }
         //////////// TERMINAN SETS Y GETS ////////////
 
         //////////// MÉTODOS ////////////

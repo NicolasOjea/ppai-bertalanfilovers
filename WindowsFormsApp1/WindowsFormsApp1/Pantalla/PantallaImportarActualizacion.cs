@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ENTIDAD;
 using WindowsFormsApp1.Gestor;
 
 namespace WindowsFormsApp1.Pantalla
@@ -19,9 +20,8 @@ namespace WindowsFormsApp1.Pantalla
         public PantallaImportarActualizacion(GestorImportarActualizacion gestor)
         {
             InitializeComponent();
+            Console.WriteLine($"Bodega seleccionada1");
             this.gestor = gestor;
-
-            MostrarBodegasEncontradas();
         }
 
         public void opcionImportarActualizacion(GestorImportarActualizacion gestor)
@@ -32,32 +32,43 @@ namespace WindowsFormsApp1.Pantalla
 
         public void habilitarPantalla(GestorImportarActualizacion gestor)
         {
-            gestor.opcionImportarActualizacion();
+            gestor.opcionImportarActualizacion(this);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void MostrarBodegasEncontradas()
+        public void mostrarBodegasParaActualizar(List<string> bodegasEncontradas)
         {
-            List<string> bodegasEncontradas = gestor.buscarBodegasParaActualizar();
-
             // Mostrar bodegas encontradas en ListBox
             foreach (string nombreBodega in bodegasEncontradas)
             {
-                lstBodegas.Items.Add(nombreBodega);
+                if(nombreBodega != "")
+                {
+                    lstBodegas.Items.Add(nombreBodega);
+                }
             }
+            solicitarSeleccion();
         }
+        public void solicitarSeleccion()
+        {
+            lblSeleccionarBodega.Visible = true;
+        }
+
         private void lstBodegas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string nombreBodegaSeleccionada = "";
             if (lstBodegas.SelectedIndex != -1)
             {
-                string nombreBodegaSeleccionada = lstBodegas.SelectedItem.ToString();
-                // Aquí puedes hacer lo que necesites con la bodega seleccionada
-                Console.WriteLine($"Bodega seleccionada: {nombreBodegaSeleccionada}");
+                nombreBodegaSeleccionada = lstBodegas.SelectedItem.ToString();
             }
+            tomarSeleccionBodega(nombreBodegaSeleccionada);
+        }
+        public void tomarSeleccionBodega(string nombreBodega)
+        {
+            lblSeleccionarBodega.Text = nombreBodega;
+            gestor.tomarSeleccionBodega(nombreBodega);
         }
     }
 }
